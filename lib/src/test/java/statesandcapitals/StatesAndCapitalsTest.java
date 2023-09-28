@@ -6,35 +6,12 @@ package statesandcapitals;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.Collection;
 
-import static org.junit.jupiter.api.Assertions.*;
-import java.util.Map;
-
-class StatesAndCapitalsTest {
-    @Test
-    void Test_states_and_capitals() throws IOException {
-        StatesAndCapitals sut = new StatesAndCapitals(Map.of(
-                "California", "Sacramento",
-                "New York", "Albany"
-        ));
-
-        assertTrue(sut.doesStateExist("California"));
-        assertFalse(sut.doesStateExist("Texas"));
-
-        assertTrue(sut.doesCapitalExist("Sacramento"));
-        assertFalse(sut.doesCapitalExist("Houston"));
-
-        assertTrue(sut.doesStateAndCapitalMatch("California", "Sacramento"));
-        assertFalse(sut.doesStateAndCapitalMatch("California", "Los Angeles"));
-
-        Collection<String> allStates = sut.getAllStates();
-        assertTrue(allStates.contains("California"));
-        assertTrue(allStates.contains("New York"));
-
-        Collection<String> allCapitals = sut.getAllCapitals();
-        assertTrue(allCapitals.contains("Sacramento"));
-        assertTrue(allCapitals.contains("Albany"));
+class StatesAndCapitalsTest
+{
+    @Test void Test_states_and_capitals() throws IOException
+    {
+        StatesAndCapitals sut = new StatesAndCapitals();
+        sut.testStatesAndCapitals();
     }
 }
-
